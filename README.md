@@ -2,13 +2,13 @@
 
 ## About
 This `Python` script can be used to compute the driving mileages of each
-month. It uses the [https://github.com/googlemaps/google-maps-services-python](googlemaps)
+month. It uses the [googlemaps](https://github.com/googlemaps/google-maps-services-python)
 library, which in turn is based on the Google Maps APIs.
 
 ## Installation, prerequisites and usage
 Just clone or copy the script locally and run it (Python 2.7+ required).
 You will need to get an API key in order to use the Google Maps APIs, see 
-[https://github.com/googlemaps/google-maps-services-python](here) for more
+[here](https://github.com/googlemaps/google-maps-services-python) for more
 details. The places are stored as dictionaries, for example
 ```
 work = {'name' : 'Work', 'address' : 'Platz der Republik 1, 11011'}
