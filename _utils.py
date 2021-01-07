@@ -176,12 +176,12 @@ def write_sheet(route_list, month_data):
 
     # Write the header
     worksheet.write('A1', month_data['month'] + ' ' + str(month_data['year']), bold_center)
-    worksheet.write('B1', 'Last mileage from ' + month_data['prev_month'], bold)
+    worksheet.write('B1', 'Letzter Kilometerstand von ' + month_data['prev_month'], bold)
     worksheet.write('C1', month_data['last_km_stand'], bold_center)
     worksheet.write('A2', 'Date', bold_center)
     worksheet.write('B2', 'Route', bold_left)
     worksheet.write('C2', 'Km', bold_center)
-    worksheet.write('D2', 'Comments', bold)
+    worksheet.write('D2', 'Kommentar', bold)
 
     # Write the entries of the month
     for entry in range(len(route_list)):
@@ -197,11 +197,11 @@ def write_sheet(route_list, month_data):
         worksheet.write('D' + str(3+entry), route_list[entry][2])
 
     # Write the footer
-    worksheet.write('B' + str(3+len(route_list)), 'Overall km:', bold_right)
+    worksheet.write('B' + str(3+len(route_list)), 'Insgesamt gefahrene Km:', bold_right)
     worksheet.write('C' + str(3+len(route_list)), normal_kms + private_kms, center)
-    worksheet.write('B' + str(3+len(route_list)+1), 'of which private:', red_text_right)
+    worksheet.write('B' + str(3+len(route_list)+1), 'davon privat:', red_text_right)
     worksheet.write('C' + str(3+len(route_list)+1), private_kms, red_text_center)
-    worksheet.write('B' + str(3+len(route_list)+2), 'Tax deductible:', bold_right)
+    worksheet.write('B' + str(3+len(route_list)+2), 'Steuerlich absetzbar:', bold_right)
     worksheet.write('C' + str(3+len(route_list)+2), normal_kms, center)
 
     workbook.close()
