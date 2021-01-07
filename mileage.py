@@ -7,7 +7,7 @@ from _utils import *
 month_data_file = 'data/example.yaml'
 
 gmaps = read_gmaps_key('data/gmaps_key.txt')
-months = read_months('data/months_en.txt')
+months = read_months('data/months_de.txt')
 month_data = read_month_data(month_data_file)
 month_data = add_month_metadata(months, month_data)
 db = read_database('data/addresses.json')
