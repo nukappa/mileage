@@ -23,6 +23,8 @@ var/
 
 docs/_build/
 
+.DS_Store
+
 # API key, addresses, monthly_yamls, output
 gmaps_key.txt
 addresses.json

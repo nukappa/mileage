@@ -4,7 +4,7 @@ __version__ = "0.2"
 
 from _utils import *
 
-month_data_file = 'data/example.yaml'
+month_data_file = 'data/2021_03.yaml'
 
 gmaps = read_gmaps_key('data/gmaps_key.txt')
 months = read_months('data/months_de.txt')

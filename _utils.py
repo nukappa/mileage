@@ -61,6 +61,7 @@ def get_distance(gmaps, address_1, address_2, mode='driving'):
     Returns:
         int, the distance in km.
     '''
+    print('computing distance from', address_1, 'to', address_2)
     route = gmaps.directions(address_1, address_2, mode=mode)
     distance = route[0]['legs'][0]['distance']['text']
     distance = str(distance).split(' ')[0]
@@ -206,8 +207,14 @@ def write_sheet(route_list, month_data):
 
     workbook.close()
 
-    subprocess.call(['libreoffice', '--headless',
-        '--convert-to', 'pdf',
-        'out/Fahrbuch_' + str(month_data['year']) + '_'
-        + month_data['month'] +  '.xlsx',
-        '--outdir', './out/'])
+    # subprocess.call(['/Applications/LibreOffice.app/Contents/MacOs/soffice', '--headless',
+    #     '--convert-to', 'pdf',
+    #     'out/Fahrbuch_' + str(month_data['year']) + '_'
+    #     + month_data['month'] +  '.xlsx',
+    #     '--outdir', './out/'])
+    
+    subprocess.Popen(['./soffice', '--convert-to', 'pdf', '--outdir', 
+                  '/Users/nikos/Desktop/stuff/Bureau/mileage/out', 
+                  '/Users/nikos/Desktop/stuff/Bureau/mileage/out/Fahrbuch_' \
+                  + str(month_data['year']) + '_' + month_data['month'] +  '.xlsx'],
+                 cwd="/Applications/LibreOffice.app/Contents/MacOS/")
